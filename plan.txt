@@ -1,0 +1,31 @@
+#1
+
+For all props
+
+plot:
+    x: 0 - 1 (0.1 step)
+    y: R2
+
+#2
+
+for all props
+
+scatter
+    x: aux r2
+    y: best int R2
+
+#3
+
+for all props
+
+scatter
+    x: prop-soc r2
+    y: best int R2
+
+#4 (optional)
+
+for all props
+
+scatter
+    x: rgb-prop r2
+    y: best int R2
