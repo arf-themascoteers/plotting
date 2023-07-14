@@ -2,12 +2,24 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv("data.csv")
-for col in df.columns:
-    x = [0.1,0.2,0.3,0.4,0.5]
-    y = list(df[col])
-    #plt.axis([0,1,0,1])
-    plt.plot(x,y)
-plt.legend(df.columns)
+data = pd.read_csv("tab1.csv", header=None).to_numpy()
+properties = ["pH(CaCl2)", "pH(H2O)", "EC", "CaCO3",
+              "P", "N", "K", "Stones"]
+x = data[:,1]
+y = data[:,5]
+plt.axis([0,1,0,1])
+plt.xlabel("Relation with SOC")
+plt.ylabel("Optimal λ")
+plt.scatter(x,y)
+
+plt.annotate(properties[0], (x[0]+0.01, y[0]+0.01))
+plt.annotate(properties[1], (x[1]+0.01, y[1]+0.01))
+plt.annotate(properties[2], (x[2]-0.03, y[2]+0.01))
+plt.annotate(properties[3], (x[3]+0.01, y[3]+0.01))
+plt.annotate(properties[4], (x[4]+0.01, y[4]+0.01))
+plt.annotate(properties[5], (x[5]+0.01, y[5]+0.01))
+plt.annotate(properties[6], (x[6]+0.01, y[6]+0.01))
+plt.annotate(properties[7], (x[7]+0.01, y[7]+0.01))
+
 plt.show()
 
